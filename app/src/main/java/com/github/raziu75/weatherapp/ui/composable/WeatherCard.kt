@@ -23,7 +23,6 @@ fun WeatherCard(
 ) {
 
     Surface(
-
         modifier = modifier
             .height(320.dp)
             .width(320.dp),
@@ -44,7 +43,6 @@ fun WeatherCard(
                 textAlign = TextAlign.Center,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
-
             )
 
             Spacer(modifier.height(30.dp))
@@ -56,9 +54,7 @@ fun WeatherCard(
                 textAlign = TextAlign.Center,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
-
             )
-
 
             Spacer(modifier.height(30.dp))
 
@@ -69,7 +65,6 @@ fun WeatherCard(
                 textAlign = TextAlign.Center,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
-
             )
 
             Spacer(modifier.height(30.dp))
@@ -81,7 +76,6 @@ fun WeatherCard(
                 textAlign = TextAlign.Center,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
-
             )
         }
     }
