@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
+import com.github.raziu75.weatherapp.data.IconWeather
 import com.github.raziu75.weatherapp.data.RetrofitHelper
 import com.github.raziu75.weatherapp.data.WeatherRepository
 import com.github.raziu75.weatherapp.ui.composable.MainScreen
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     }.onFailure { println("CA MARCHE PAS !") }
             }
 
-            MainScreen(model = weather)
+            MainScreen(model = weather, icon = IconWeather())
         }
     }
 }

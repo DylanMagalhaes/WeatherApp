@@ -1,5 +1,6 @@
 package com.github.raziu75.weatherapp.ui.composable
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -8,10 +9,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.github.raziu75.weatherapp.data.IconWeather
 import com.github.raziu75.weatherapp.ui.model.WeatherModel
 
 
@@ -19,7 +22,8 @@ import com.github.raziu75.weatherapp.ui.model.WeatherModel
 @Composable
 fun WeatherCard(
     modifier: Modifier.Companion,
-    weatherModel: WeatherModel?
+    weatherModel: WeatherModel?,
+    icon: IconWeather
 ) {
 
     Surface(
@@ -56,12 +60,20 @@ fun WeatherCard(
                 fontWeight = FontWeight.Black
             )
 
-            Spacer(modifier.height(30.dp))
 
+            if (weatherModel != null) {
+                Image(
+                    painter = painterResource(id = icon.getIcon(weatherModel.icon)),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height(64.dp)
+                        .width(64.dp)
+                )
+            }
             Text(
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.fillMaxWidth(),
-                text = " Humidity: ${weatherModel?.humidity}%",
+                text = "${weatherModel?.description}",
                 textAlign = TextAlign.Center,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
@@ -77,6 +89,17 @@ fun WeatherCard(
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Black
             )
+
+
+            Text(
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.fillMaxWidth(),
+                text = " Humidity: ${weatherModel?.humidity}%",
+                textAlign = TextAlign.Center,
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Black
+            )
+
         }
     }
 }

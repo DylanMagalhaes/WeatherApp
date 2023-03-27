@@ -6,7 +6,8 @@ data class WeatherResponse(
     @SerializedName("list") val list: List<WeatherDetail>
 ) {
     data class WeatherDetail(
-        @SerializedName("main") val main: WeatherMain
+        @SerializedName("main") val main: WeatherMain,
+        @SerializedName("weather") val weatherList: List<WeatherWeather>
 
     ) {
         data class WeatherMain(
@@ -14,7 +15,17 @@ data class WeatherResponse(
             @SerializedName("humidity") val humidity: Int,
             @SerializedName("pressure") val pressure: Int,
 
-        )
+            )
+
+        data class WeatherWeather(
+            @SerializedName("description") val weatherDescription: String,
+            @SerializedName("main") val description: String,
+            @SerializedName("icon") val icon: String,
+            @SerializedName("id") val id: Int,
+
+        ) {
+
+        }
     }
 }
 
