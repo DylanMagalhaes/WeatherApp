@@ -14,7 +14,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.github.raziu75.weatherapp.data.IconWeather
 import com.github.raziu75.weatherapp.ui.model.WeatherModel
 
 
@@ -23,7 +22,6 @@ import com.github.raziu75.weatherapp.ui.model.WeatherModel
 fun WeatherCard(
     modifier: Modifier.Companion,
     weatherModel: WeatherModel?,
-    icon: IconWeather
 ) {
 
     Surface(
@@ -63,7 +61,7 @@ fun WeatherCard(
 
             if (weatherModel != null) {
                 Image(
-                    painter = painterResource(id = icon.getIcon(weatherModel.icon)),
+                    painter = painterResource(id = weatherModel.icon),
                     contentDescription = null,
                     modifier = Modifier
                         .height(64.dp)

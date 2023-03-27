@@ -8,14 +8,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.github.raziu75.weatherapp.data.IconWeather
+
 import com.github.raziu75.weatherapp.ui.model.WeatherModel
 
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
     model: WeatherModel?,
-    icon : IconWeather
+
 ) {
     Box(contentAlignment = Alignment.Center,
         modifier = modifier
@@ -26,7 +26,6 @@ fun MainScreen(
         WeatherCard(
             modifier = Modifier,
             weatherModel = model,
-            icon = icon
         )
 
     }
